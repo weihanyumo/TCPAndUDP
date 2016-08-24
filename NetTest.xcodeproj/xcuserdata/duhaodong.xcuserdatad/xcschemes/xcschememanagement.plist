@@ -4,7 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>NetTest.xcscheme</key>
+		<key>client.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>server.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -13,6 +18,21 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>962755C41D6C6F68000DEAF3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>962755CF1D6D4060000DEAF3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>962755DD1D6D41C2000DEAF3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>962755E81D6D4325000DEAF3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
