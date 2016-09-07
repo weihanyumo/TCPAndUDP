@@ -82,9 +82,7 @@ int tcpserver()
     bzero(&my_addr, sizeof(my_addr));
     my_addr.sin_family = AF_INET;
     my_addr.sin_port = htons(myport);
-//    char *ip = "192.168.33.237";
-//    ip = "127.0.0.1";
-//    my_addr.sin_addr.s_addr = inet_addr(ip);
+    
     my_addr.sin_addr.s_addr = INADDR_ANY;
     
     if (bind(sockfd, (struct sockaddr *)&my_addr, sizeof(struct sockaddr)) == -1)

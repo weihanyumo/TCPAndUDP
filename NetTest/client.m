@@ -19,37 +19,6 @@
 #include <sys/ioctl.h>
 #include "prefix.h"
 
-
-void GetLocalIp(char *ip)
-{
-    return;
-    int sock_get_ip;
-    char ipaddr[50];
-    
-    struct   sockaddr_in *sin;
-    struct   ifreq ifr_ip;
-    
-    if ((sock_get_ip=socket(AF_INET, SOCK_STREAM, 0)) == -1)
-    {
-        printf("socket create failse...GetLocalIp!/n");
-    }
-    
-    memset(&ifr_ip, 0, sizeof(ifr_ip));
-    strncpy(ifr_ip.ifr_name, "eth0", sizeof(ifr_ip.ifr_name) - 1);
-    
-    if( ioctl( sock_get_ip, SIOCGIFADDR, &ifr_ip) < 0 )
-    {
-    }
-    sin = (struct sockaddr_in *)&ifr_ip.ifr_addr;
-    strcpy(ipaddr,inet_ntoa(sin->sin_addr));
-    
-    printf("local ip:%s /n",ipaddr);
-    close( sock_get_ip );
-    
-    memcmp(ip,ipaddr, strlen(ipaddr));
-}
-
-
 int UDPSendMessage()
 {
     struct sockaddr_in s_addr;
@@ -67,13 +36,13 @@ int UDPSendMessage()
     s_addr.sin_port = PORT;
     char ip[128];
     memset(ip, 0, sizeof(ip));
-    GetLocalIp(ip);
     
     s_addr.sin_addr.s_addr = inet_addr("192.168.33.237");
     addr_len = sizeof(s_addr);
     
     strcpy(buf, "hello i am here");
     len = sendto(sock, buf, strlen(buf), 0, (struct sockaddr *)&s_addr, addr_len);
+    
     if (len < 0) {
         printf("\n\r send error");
         return 3;

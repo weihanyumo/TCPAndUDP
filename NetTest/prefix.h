@@ -10,7 +10,7 @@
 #define prefix_h
 
 
-#define USE_UDP 1
+#define USE_UDP 0
 #define PORT 5678
 #define MAXBUF 1024
 
